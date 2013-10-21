@@ -1,0 +1,93 @@
+include mixins
+extends layout
+
+block content
+  h1= "I'm Jaded"
+  p Welcome to #{title}
+  h4= "Here is some text at the end of the block content."
+
+  a(href='http://fall2013.refactoru.com') Student Site
+  h2= "Here's where part IV goes"
+  button(class="blue") Hey
+  Be what:
+
+  p#blue.blue
+    input(type="checkbox", name="agree")
+    | tags 
+    input(type="checkbox", name="agree")
+    | id and class literals
+    input(type="checkbox", name="agree")
+    | attributes
+    input(type="checkbox", name="agree")
+    | piped text
+    input(type="checkbox", name="agree")
+    | conditionals
+    input(type="checkbox", name="agree")
+    | mixins
+
+
+  p.
+    all
+    the 
+    words
+    are 
+    piped
+
+
+  if name == "Bob"
+    h1 Hello Bob
+  else
+    h1 My name is #{name}
+
+  unless errors
+  p no errors
+  if errors
+    h1 mistakes were happened
+
+  
+  
+
+  ul#books
+    +book("Book A", 12.99)
+    +book("Book B", 5.99)
+
+
+  form(action='demo_form.asp', method='get')
+    h4 Save a resource:
+      p.url
+        | 1. URL of resource:
+        input.resource(type='url', name='resource')
+        | *
+      br
+      br
+      p.p1
+        | 2. Field of study:
+        //
+           <input type="text" name="p1" class="p1" placeholder="field">*</p> 
+        select.media
+          option(name='not', value='not') ---
+          option(name='f1', value='f1') Library Science
+          option(name='f2', value='f2') Journalism
+          option(name='f3', value='f3') Mathmatics
+          option(name='f4', value='f4') Physics
+          p.p2
+            | .	2a. System:
+            input.p2(type='text', name='p2')
+          p.p3
+            | .	.	2b. Environment:
+            input.p3(type='text', name='p3')
+          p.p4
+            | .	.	.	2c. Specials:
+            input.p4(type='text', name='p4')
+          p.m1
+            | 3. Object of study:
+            input.m1(type='text', name='m1')
+            | *
+          
+            label(for='public')
+              div
+                | Put in public library as well?
+                select
+                  option(value='yes') yes
+                  option(value='no') no
+                button(type='submit') Submit

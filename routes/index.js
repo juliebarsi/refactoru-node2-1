@@ -1,0 +1,9 @@
+
+/*
+ * GET home page.
+ */
+
+exports.index = function(req, res){
+  res.render('index', { title: 'Buck Wild', name: "Julie", errors: false});
+};
+
